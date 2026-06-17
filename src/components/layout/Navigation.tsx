@@ -53,16 +53,15 @@ export default function Navigation() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '72px' }}>
 
           {/* Logo */}
-          <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
-            <Image src="/cosmos-logo-mark.png" alt="Cosmos" width={40} height={40} style={{ width: '40px', height: '40px', objectFit: 'contain' }} priority />
-            <div>
-              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.1rem', letterSpacing: '0.15em', color: '#fff' }}>
-                COSMOS
-              </div>
-              <div style={{ fontSize: '0.55rem', letterSpacing: '0.2em', color: '#00B8FF', fontWeight: 500, marginTop: '-2px' }}>
-                MEDICAL TECHNOLOGIES
-              </div>
-            </div>
+          <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+            <Image
+              src="/cosmos-logo-full-lockup.png"
+              alt="Cosmos Medical Technologies"
+              width={220}
+              height={62}
+              style={{ width: 'auto', height: '38px', objectFit: 'contain', mixBlendMode: 'lighten' }}
+              priority
+            />
           </a>
 
           {/* Desktop Nav */}
