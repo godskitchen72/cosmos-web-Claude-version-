@@ -253,14 +253,11 @@ body {
   align-items: center;
 }
 
-/* Hero floating stat cards - desktop default */
-.hero-stat-card {
-  z-index: 2;
-}
-
-/* Mobile stat row - hidden on desktop, shown below logo on mobile */
-.hero-stats-mobile-row {
-  display: none;
+.hero-stat-card-mobile {
+  background: rgba(10,30,61,0.92);
+  border: 1px solid rgba(0,212,255,0.2);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
 }
 
 /* Dashboard table - desktop grid layout */
@@ -279,29 +276,6 @@ body {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-  }
-
-  /* Hide the absolutely-positioned desktop cards entirely on mobile - they overlap the logo art */
-  .hero-stat-card {
-    display: none !important;
-  }
-
-  /* Show the clean mobile stat row below the logo instead */
-  .hero-stats-mobile-row {
-    display: flex;
-    gap: 0.75rem;
-    width: 100%;
-    max-width: 520px;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .hero-stat-card-mobile {
-    flex: 1;
-    min-width: 140px;
-    background: rgba(10,30,61,0.92);
-    border: 1px solid rgba(0,212,255,0.2);
-    border-radius: 10px;
-    padding: 0.9rem 1.1rem;
   }
 
   /* Switch dashboard table to stacked cards */
@@ -331,12 +305,6 @@ body {
   }
   .dashboard-tabs > div {
     flex-shrink: 0;
-  }
-}
-
-@media (max-width: 600px) {
-  .hero-logo-box {
-    max-width: 320px !important;
   }
 }
 

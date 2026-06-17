@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import { ArrowRight, Play } from 'lucide-react'
 
 export default function HeroSection() {
@@ -114,76 +113,17 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: C logo mark + dashboard preview */}
-          <div className="hero-visual-wrap" style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-            {/* Large glowing C */}
-            <div className="hero-logo-box" style={{ position: 'relative', width: '100%', maxWidth: '520px', aspectRatio: '1' }}>
-              {/* Outer glow ring */}
-              <div style={{
-                position: 'absolute',
-                inset: '5%',
-                borderRadius: '50%',
-                background: 'transparent',
-                border: '1px solid rgba(0,212,255,0.06)',
-                boxShadow: '0 0 80px rgba(0,100,200,0.15)',
-              }} className="spin-slow" />
-
-              {/* Real Cosmos logo mark */}
-              <Image
-                src="/cosmos-logo-mark.png"
-                alt="Cosmos Medical Technologies"
-                fill
-                style={{ objectFit: 'contain', filter: 'drop-shadow(0 0 50px rgba(0,150,255,0.35))' }}
-                priority
-              />
-
-              {/* Floating stat card - top left */}
-              <div className="hero-stat-card hero-stat-card-top" style={{
-                position: 'absolute',
-                top: '8%',
-                left: '-5%',
-                background: 'rgba(10,30,61,0.92)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(0,212,255,0.2)',
-                borderRadius: '10px',
-                padding: '0.9rem 1.2rem',
-                minWidth: '150px',
-              }}>
-                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>Claims Processed</div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.75rem', fontWeight: 700, color: '#00D4FF' }}>$2.4M</div>
-                <div style={{ fontSize: '0.7rem', color: '#4ade80' }}>▲ 18.6% this month</div>
-              </div>
-
-              {/* Floating stat card - bottom right */}
-              <div className="hero-stat-card hero-stat-card-bottom" style={{
-                position: 'absolute',
-                bottom: '12%',
-                right: '-5%',
-                background: 'rgba(10,30,61,0.92)',
-                backdropFilter: 'blur(12px)',
-                border: '1px solid rgba(0,212,255,0.2)',
-                borderRadius: '10px',
-                padding: '0.9rem 1.2rem',
-                minWidth: '150px',
-              }}>
-                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>NF3s Generated</div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.75rem', fontWeight: 700, color: '#fff' }}>2,847</div>
-                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)' }}>Across 45 practices</div>
-              </div>
+          {/* Right: stat showcase */}
+          <div className="hero-visual-wrap" style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.25rem' }}>
+            <div className="hero-stat-card-mobile" style={{ width: '100%', maxWidth: '380px' }}>
+              <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>Claims Processed</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '2.25rem', fontWeight: 700, color: '#00D4FF' }}>$2.4M</div>
+              <div style={{ fontSize: '0.8rem', color: '#4ade80' }}>▲ 18.6% this month</div>
             </div>
-
-            {/* Mobile-only stat row, rendered below the logo instead of overlapping it */}
-            <div className="hero-stats-mobile-row">
-              <div className="hero-stat-card-mobile">
-                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>Claims Processed</div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#00D4FF' }}>$2.4M</div>
-                <div style={{ fontSize: '0.7rem', color: '#4ade80' }}>▲ 18.6% this month</div>
-              </div>
-              <div className="hero-stat-card-mobile">
-                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>NF3s Generated</div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#fff' }}>2,847</div>
-                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)' }}>Across 45 practices</div>
-              </div>
+            <div className="hero-stat-card-mobile" style={{ width: '100%', maxWidth: '380px' }}>
+              <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.4rem' }}>NF3s Generated</div>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '2.25rem', fontWeight: 700, color: '#fff' }}>2,847</div>
+              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>Across 45 practices</div>
             </div>
           </div>
         </div>
