@@ -107,7 +107,7 @@ export default function DashboardSection() {
                 Front Desk Dashboard
               </span>
             </div>
-            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+            <div className="dashboard-tabs" style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {['Dashboard', 'Patients', 'Appointments', 'Intake', 'Billing', 'Tasks'].map((tab, i) => (
                 <div
                   key={tab}
@@ -168,8 +168,8 @@ export default function DashboardSection() {
               borderRadius: '8px',
               overflow: 'hidden',
             }}>
-              {/* Table header */}
-              <div style={{
+              {/* Table header - hidden on mobile */}
+              <div className="dashboard-table-header" style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 1fr 90px 110px 100px 130px',
                 padding: '0.6rem 1.25rem',
@@ -184,26 +184,21 @@ export default function DashboardSection() {
                 ))}
               </div>
 
-              {/* Table rows */}
+              {/* Table rows - grid on desktop, stacked card on mobile */}
               {patients.map((p, i) => (
                 <div
                   key={i}
-                  className="dashboard-row"
+                  className="dashboard-row dashboard-table-row"
                   style={{
-                    display: 'grid',
-                    gridTemplateColumns: '1fr 1fr 90px 110px 100px 130px',
-                    padding: '0.75rem 1.25rem',
                     borderBottom: i < patients.length - 1 ? '1px solid rgba(0,212,255,0.05)' : 'none',
-                    gap: '0.5rem',
-                    alignItems: 'center',
                     cursor: 'pointer',
                     transition: 'background 0.15s',
                   }}
                 >
-                  <div style={{ fontSize: '0.8rem', fontWeight: 500, color: '#fff' }}>{p.name}</div>
-                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)' }}>{p.provider}</div>
-                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)' }}>{p.appt}</div>
-                  <div>
+                  <div className="dt-cell dt-name" style={{ fontSize: '0.8rem', fontWeight: 500, color: '#fff' }}>{p.name}</div>
+                  <div className="dt-cell" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.55)' }}>{p.provider}</div>
+                  <div className="dt-cell" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)' }}>{p.appt}</div>
+                  <div className="dt-cell">
                     <span style={{
                       fontSize: '0.7rem',
                       fontWeight: 600,
@@ -211,12 +206,13 @@ export default function DashboardSection() {
                       borderRadius: '4px',
                       background: statusColors[p.status] || 'rgba(255,255,255,0.1)',
                       color: statusText[p.status] || '#fff',
+                      whiteSpace: 'nowrap',
                     }}>
                       {p.status}
                     </span>
                   </div>
-                  <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)' }}>{p.billing}</div>
-                  <div>
+                  <div className="dt-cell" style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)' }}>{p.billing}</div>
+                  <div className="dt-cell">
                     <span style={{
                       fontSize: '0.65rem',
                       fontWeight: 600,
@@ -225,6 +221,7 @@ export default function DashboardSection() {
                       background: `${p.flagColor}18`,
                       color: p.flagColor,
                       border: `1px solid ${p.flagColor}30`,
+                      whiteSpace: 'nowrap',
                     }}>
                       {p.flag}
                     </span>

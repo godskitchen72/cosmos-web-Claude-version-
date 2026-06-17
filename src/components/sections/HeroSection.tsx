@@ -28,8 +28,7 @@ export default function HeroSection() {
       }} />
 
       <div style={{ maxWidth: '1280px', margin: '0 auto', width: '100%', position: 'relative', zIndex: 1 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center' }}
-          className="grid-cols-1 md:grid-cols-2">
+        <div className="hero-grid">
 
           {/* Left: Copy */}
           <div>
@@ -224,7 +223,7 @@ export default function HeroSection() {
               </svg>
 
               {/* Floating stat card - top left */}
-              <div style={{
+              <div className="hero-stat-card hero-stat-card-top" style={{
                 position: 'absolute',
                 top: '8%',
                 left: '-5%',
@@ -241,7 +240,7 @@ export default function HeroSection() {
               </div>
 
               {/* Floating stat card - bottom right */}
-              <div style={{
+              <div className="hero-stat-card hero-stat-card-bottom" style={{
                 position: 'absolute',
                 bottom: '12%',
                 right: '-5%',

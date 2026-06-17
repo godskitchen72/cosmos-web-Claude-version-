@@ -245,6 +245,85 @@ body {
   border-bottom: 1px solid rgba(0,212,255,0.15);
 }
 
+/* Hero responsive grid */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Hero floating stat cards - desktop default */
+.hero-stat-card {
+  z-index: 2;
+}
+
+/* Dashboard table - desktop grid layout */
+.dashboard-table-header,
+.dashboard-table-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 90px 110px 100px 130px;
+  gap: 0.5rem;
+  align-items: center;
+}
+.dashboard-table-row {
+  padding: 0.75rem 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  /* Stop floating cards from spilling outside their container and overlapping text */
+  .hero-stat-card {
+    position: static !important;
+    margin-top: 1rem;
+    display: inline-block;
+  }
+  .hero-stat-card-top {
+    margin-right: 0.75rem;
+  }
+
+  /* Switch dashboard table to stacked cards */
+  .dashboard-table-header {
+    display: none;
+  }
+  .dashboard-table-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.75rem;
+    padding: 1rem 1.25rem;
+  }
+  .dt-name {
+    width: 100%;
+    font-size: 0.9rem !important;
+  }
+  .dt-cell {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Collapse dashboard tab list to scrollable row */
+  .dashboard-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  .dashboard-tabs > div {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-stat-card {
+    display: block;
+    width: 100%;
+    margin-right: 0 !important;
+  }
+}
+
 /* Responsive typography */
 @media (max-width: 768px) {
   .hero-headline { font-size: 2.5rem; }
