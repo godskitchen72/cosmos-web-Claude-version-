@@ -129,9 +129,9 @@ export default function HeroSection() {
           </div>
 
           {/* Right: C logo mark + dashboard preview */}
-          <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div className="hero-visual-wrap" style={{ position: 'relative', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
             {/* Large glowing C */}
-            <div style={{ position: 'relative', width: '100%', maxWidth: '520px', aspectRatio: '1' }}>
+            <div className="hero-logo-box" style={{ position: 'relative', width: '100%', maxWidth: '520px', aspectRatio: '1' }}>
               {/* Outer glow ring */}
               <div style={{
                 position: 'absolute',
@@ -182,6 +182,20 @@ export default function HeroSection() {
               }}>
                 <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>NF3s Generated</div>
                 <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.75rem', fontWeight: 700, color: '#fff' }}>2,847</div>
+                <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)' }}>Across 45 practices</div>
+              </div>
+            </div>
+
+            {/* Mobile-only stat row, rendered below the logo instead of overlapping it */}
+            <div className="hero-stats-mobile-row">
+              <div className="hero-stat-card-mobile">
+                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>Claims Processed</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#00D4FF' }}>$2.4M</div>
+                <div style={{ fontSize: '0.7rem', color: '#4ade80' }}>▲ 18.6% this month</div>
+              </div>
+              <div className="hero-stat-card-mobile">
+                <div style={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '0.25rem' }}>NF3s Generated</div>
+                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: '1.5rem', fontWeight: 700, color: '#fff' }}>2,847</div>
                 <div style={{ fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)' }}>Across 45 practices</div>
               </div>
             </div>
