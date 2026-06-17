@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { ArrowRight, Play, Shield, Lock, Cloud } from 'lucide-react'
 
 export default function HeroSection() {
@@ -141,86 +142,14 @@ export default function HeroSection() {
                 boxShadow: '0 0 80px rgba(0,100,200,0.15)',
               }} className="spin-slow" />
 
-              {/* Big C SVG */}
-              <svg
-                viewBox="0 0 400 400"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{ width: '100%', height: '100%', filter: 'drop-shadow(0 0 40px rgba(0,150,255,0.3))' }}
-              >
-                <defs>
-                  <linearGradient id="heroC" x1="350" y1="60" x2="60" y2="300" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#00D4FF" />
-                    <stop offset="50%" stopColor="#0099FF" />
-                    <stop offset="100%" stopColor="#0044CC" />
-                  </linearGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="3" result="blur" />
-                    <feMerge>
-                      <feMergeNode in="blur" />
-                      <feMergeNode in="SourceGraphic" />
-                    </feMerge>
-                  </filter>
-                  <radialGradient id="crossGrad2" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#00D4FF" />
-                    <stop offset="100%" stopColor="#0066CC" />
-                  </radialGradient>
-                </defs>
-
-                {/* Constellation C outline - polygon/star style */}
-                {/* Main C arc */}
-                <path
-                  d="M320 80 Q340 65 330 50 Q230 20 140 60 Q60 95 40 180 Q20 265 70 330 Q120 390 220 390 Q300 390 340 350 Q360 330 350 310"
-                  stroke="url(#heroC)"
-                  strokeWidth="3"
-                  fill="none"
-                  strokeLinecap="round"
-                  filter="url(#glow)"
-                />
-
-                {/* Constellation polygon overlay on C */}
-                <path
-                  d="M310 75 L340 55 L320 80 L350 70 L330 95 L310 75"
-                  stroke="rgba(0,212,255,0.5)" strokeWidth="1" fill="none"
-                />
-                <path
-                  d="M140 60 L110 45 L80 70 L60 110 L50 150"
-                  stroke="rgba(0,212,255,0.3)" strokeWidth="1" fill="none"
-                />
-                <path
-                  d="M50 250 L40 280 L55 310 L80 340 L120 370 L160 385 L210 390"
-                  stroke="rgba(0,212,255,0.3)" strokeWidth="1" fill="none"
-                />
-                <path
-                  d="M340 340 L360 320 L350 300 L360 280"
-                  stroke="rgba(0,212,255,0.4)" strokeWidth="1" fill="none"
-                />
-
-                {/* Constellation node dots */}
-                {[
-                  [310, 75], [340, 55], [350, 70], [330, 95],
-                  [140, 60], [110, 45], [80, 70], [60, 110],
-                  [50, 150], [40, 220], [50, 280], [80, 340],
-                  [160, 385], [260, 392], [340, 360], [355, 330],
-                ].map(([cx, cy], i) => (
-                  <circle key={i} cx={cx} cy={cy} r="2.5" fill="#00D4FF" opacity="0.8" />
-                ))}
-
-                {/* Trailing stars (top right of C opening) */}
-                {[
-                  [370, 50, 3], [385, 65, 2], [395, 80, 1.5],
-                  [380, 40, 2], [395, 55, 1.5], [370, 30, 1],
-                ].map(([cx, cy, r], i) => (
-                  <circle key={i} cx={cx} cy={cy} r={r} fill="#00D4FF" opacity={0.9 - i * 0.12} />
-                ))}
-
-                {/* Center cross */}
-                <rect x="183" y="148" width="34" height="104" rx="6" fill="url(#crossGrad2)" opacity="0.95" />
-                <rect x="148" y="183" width="104" height="34" rx="6" fill="url(#crossGrad2)" opacity="0.95" />
-
-                {/* Cross glow */}
-                <rect x="183" y="148" width="34" height="104" rx="6" fill="url(#crossGrad2)" opacity="0.3" style={{ filter: 'blur(8px)' }} />
-              </svg>
+              {/* Real Cosmos logo mark */}
+              <Image
+                src="/cosmos-logo-mark.png"
+                alt="Cosmos Medical Technologies"
+                fill
+                style={{ objectFit: 'contain', filter: 'drop-shadow(0 0 50px rgba(0,150,255,0.35))' }}
+                priority
+              />
 
               {/* Floating stat card - top left */}
               <div className="hero-stat-card hero-stat-card-top" style={{

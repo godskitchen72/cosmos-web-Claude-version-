@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { ChevronDown, Menu, X } from 'lucide-react'
 
 const navItems = [
@@ -53,32 +54,7 @@ export default function Navigation() {
 
           {/* Logo */}
           <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
-            {/* SVG C with trailing stars logo mark */}
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* Constellation C shape */}
-              <path
-                d="M32 10 Q20 4 10 12 Q4 17 4 22 Q4 30 12 34 Q20 38 30 34"
-                stroke="url(#cGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round"
-              />
-              {/* Cross/plus in center */}
-              <rect x="15.5" y="12" width="3" height="11" rx="1.5" fill="url(#crossGrad)" />
-              <rect x="11" y="16.5" width="12" height="3" rx="1.5" fill="url(#crossGrad)" />
-              {/* Trailing star dots */}
-              <circle cx="35" cy="8" r="1.2" fill="#00D4FF" opacity="0.9" />
-              <circle cx="37" cy="11" r="0.8" fill="#00B8FF" opacity="0.7" />
-              <circle cx="38" cy="14" r="0.6" fill="#00B8FF" opacity="0.5" />
-              <circle cx="36" cy="5" r="0.6" fill="#00D4FF" opacity="0.6" />
-              <defs>
-                <linearGradient id="cGrad" x1="32" y1="10" x2="4" y2="22" gradientUnits="userSpaceOnUse">
-                  <stop offset="0%" stopColor="#00D4FF" />
-                  <stop offset="100%" stopColor="#0066CC" />
-                </linearGradient>
-                <linearGradient id="crossGrad" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-                  <stop offset="0%" stopColor="#00D4FF" />
-                  <stop offset="100%" stopColor="#0099FF" />
-                </linearGradient>
-              </defs>
-            </svg>
+            <Image src="/cosmos-logo-mark.png" alt="Cosmos" width={40} height={40} style={{ width: '40px', height: '40px', objectFit: 'contain' }} priority />
             <div>
               <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1.1rem', letterSpacing: '0.15em', color: '#fff' }}>
                 COSMOS

@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { Linkedin, Facebook, Twitter, Youtube } from 'lucide-react'
 
 const footerLinks = {
@@ -28,25 +29,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-                <path d="M32 10 Q20 4 10 12 Q4 17 4 22 Q4 30 12 34 Q20 38 30 34"
-                  stroke="url(#footCGrad)" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-                <rect x="15.5" y="12" width="3" height="11" rx="1.5" fill="url(#footCross)" />
-                <rect x="11" y="16.5" width="12" height="3" rx="1.5" fill="url(#footCross)" />
-                <circle cx="35" cy="8" r="1.2" fill="#00D4FF" opacity="0.9" />
-                <circle cx="37" cy="11" r="0.8" fill="#00B8FF" opacity="0.7" />
-                <circle cx="38" cy="14" r="0.6" fill="#00B8FF" opacity="0.5" />
-                <defs>
-                  <linearGradient id="footCGrad" x1="32" y1="10" x2="4" y2="22" gradientUnits="userSpaceOnUse">
-                    <stop offset="0%" stopColor="#00D4FF" />
-                    <stop offset="100%" stopColor="#0066CC" />
-                  </linearGradient>
-                  <linearGradient id="footCross" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
-                    <stop offset="0%" stopColor="#00D4FF" />
-                    <stop offset="100%" stopColor="#0099FF" />
-                  </linearGradient>
-                </defs>
-              </svg>
+              <Image src="/cosmos-logo-mark.png" alt="Cosmos" width={36} height={36} style={{ width: '36px', height: '36px', objectFit: 'contain' }} />
               <div>
                 <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: '1rem', letterSpacing: '0.12em', color: '#fff' }}>COSMOS</div>
                 <div style={{ fontSize: '0.5rem', letterSpacing: '0.18em', color: '#00B8FF', fontWeight: 500 }}>MEDICAL TECHNOLOGIES</div>
