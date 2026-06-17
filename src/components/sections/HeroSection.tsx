@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { ArrowRight, Play, Shield, Lock, Cloud } from 'lucide-react'
+import { ArrowRight, Play } from 'lucide-react'
 
 export default function HeroSection() {
   return (
@@ -95,7 +95,7 @@ export default function HeroSection() {
             </p>
 
             {/* Buttons */}
-            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <button className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem', padding: '0.85rem 2rem' }}>
                 Request Demo
                 <ArrowRight size={16} />
@@ -111,20 +111,6 @@ export default function HeroSection() {
                 </div>
                 Explore Platform
               </button>
-            </div>
-
-            {/* Trust badges */}
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {[
-                { icon: <Shield size={14} />, label: 'HIPAA Compliant' },
-                { icon: <Lock size={14} />, label: 'SOC 2 Type II' },
-                { icon: <Cloud size={14} />, label: 'Cloud Secure' },
-              ].map(badge => (
-                <div key={badge.label} className="trust-badge">
-                  <span style={{ color: '#00B8FF' }}>{badge.icon}</span>
-                  {badge.label}
-                </div>
-              ))}
             </div>
           </div>
 

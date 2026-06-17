@@ -57,9 +57,9 @@ export default function Navigation() {
             <Image
               src="/cosmos-logo-full-lockup.png"
               alt="Cosmos Medical Technologies"
-              width={220}
-              height={62}
-              style={{ width: 'auto', height: '38px', objectFit: 'contain', mixBlendMode: 'lighten' }}
+              width={280}
+              height={79}
+              style={{ width: 'auto', height: '52px', objectFit: 'contain' }}
               priority
             />
           </a>
